@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumenvale — Where Light Begins</title>
+  <meta name="description" content="Praktische Hilfe für Zuhause und Unterstützung für kleine Läden in Innsbruck. Reinigung, Garten, Umzug, Fotos, Social Media & mehr.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #c9a962;
+      --gold-light: #e8d9b0;
+      --gold-dark: #a88b3d;
+      --text: #1a1a1a;
+      --text-light: #5a5a5a;
+      --bg: #ffffff;
+      --bg-soft: #faf8f4;
+      --bg-green: #f0f4f0;
+      --border: #e8e2d6;
+      --dark: #1c1c1c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: -1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-cta {
+      background: var(--text);
+      color: white !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dark);
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.3rem;
+    }
+
+    .menu-btn span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      margin: 5px 0;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 8.5rem 1.5rem 4.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-logo {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 1.1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 5.5vw, 3.4rem);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero .tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero .claim {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.45rem, 3.2vw, 2rem);
+      font-weight: 400;
+      line-height: 1.35;
+      max-width: 480px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero .subclaim {
+      font-size: 0.98rem;
+      color: var(--text-light);
+      max-width: 420px;
+      margin: 0 auto 2.2rem;
+    }
+
+    .hero-divider {
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 2.2rem;
+    }
+
+    /* ========== VALUES ========== */
+    .values {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    .value-item {
+      padding: 1rem 0.5rem;
+    }
+
+    .value-item .icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold-dark);
+    }
+
+    .value-item p {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.9rem 1.7rem;
+    }
+
+    .service-card h3 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 1.1rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+    }
+
+    .service-card li {
+      font-size: 0.98rem;
+      padding: 0.55rem 0;
+      color: var(--text);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .service-card li:last-child {
+      border-bottom: none;
+    }
+
+    .service-card li strong {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .service-card li span {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      display: block;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+
+    /* ========== HOW ========== */
+    .how {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .how-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 1.8rem;
+    }
+
+    .how-box h3 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .step {
+      padding: 0.5rem;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0 auto 0.6rem;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      max-width: 700px;
+      margin: 0 auto 4.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .contact-box {
+      background: var(--bg-green);
+      border: 1px solid #d4e0d4;
+      border-radius: 14px;
+      padding: 2.3rem 1.8rem;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4a6b4a;
+      margin-bottom: 0.7rem;
+    }
+
+    .phone {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .phone a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .phone a:hover {
+      color: var(--gold-dark);
+    }
+
+    .contact-note {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 1.3rem;
+    }
+
+    .contact-links {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .contact-links a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .contact-links a:hover {
+      border-color: var(--gold-dark);
+    }
+
+    .address {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 1.8rem 1.5rem 2.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 750px) {
+      nav {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1.4rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1.1rem;
+      }
+
+      .values {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .hero {
+        padding: 7.5rem 1.2rem 3.5rem;
+      }
+
+      .phone {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4 L36 24 L56 28 L36 32 L32 52 L28 32 L8 28 L28 24 Z" fill="#c9a962" opacity="0.9"/>
+          <path d="M32 12 L34 24 L46 26 L34 28 L32 40 L30 28 L18 26 L30 24 Z" fill="#e8d9b0"/>
+          <path d="M20 18 Q32 8 44 18" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+          <path d="M18 22 Q32 10 46 22" stroke="#c9a962" stroke-width="1" fill="none" opacity="0.6"/>
+        </svg>
+        <div>
+          <div class="logo-text">Lumenvale</div>
+          <div class="logo-sub">Where Light Begins</div>
+        </div>
+      </a>
+
+      <nav id="nav">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#kontakt" class="nav-cta">Kontakt</a>
+      </nav>
+
+      <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menü">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 4 L36 24 L56 28 L36 32 L32 52 L28 32 L8 28 L28 24 Z" fill="#c9a962" opacity="0.9"/>
+      <path d="M32 12 L34 24 L46 26 L34 28 L32 40 L30 28 L18 26 L30 24 Z" fill="#e8d9b0"/>
+      <path d="M20 18 Q32 8 44 18" stroke="#c9a962" stroke-width="1.5" fill="none"/>
+      <path d="M18 22 Q32 10 46 22" stroke="#c9a962" stroke-width="1" fill="none" opacity="0.6"/>
+    </svg>
+
+    <h1>LUMENVALE</h1>
+    <p class="tagline">Where Light Begins</p>
+
+    <p class="claim">Mehr Zeit für das,<br>was wirklich zählt.</p>
+    <div class="hero-divider"></div>
+    <p class="subclaim">Praktische Hilfe rund ums Zuhause — kreative Ideen für Läden.</p>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="value-item">
+      <div class="icon">◆</div>
+      <p>Zuverlässig<br>& Pünktlich</p>
+    </div>
+    <div class="value-item">
+      <div class="icon">◆</div>
+      <p>Freundlicher<br>Service</p>
+    </div>
+    <div class="value-item">
+      <div class="icon">◆</div>
+      <p>Hohe Qualitäts-<br>standards</p>
+    </div>
+    <div class="value-item">
+      <div class="icon">◆</div>
+      <p>Faire<br>Preise</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="leistungen">
+    <h2 class="section-title">Wobei wir helfen</h2>
+    <p class="section-sub">Praktische Hilfe für Zuhause und Unterstützung für kleine Läden.</p>
+
+    <div class="services-grid">
+      <!-- Für Zuhause -->
+      <div class="service-card">
+        <h3>Für Zuhause</h3>
+        <ul>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Haus- und Wohnungsputz</strong>
+              <span>Wir reinigen Räume. Fenster putzen wir auf Wunsch und nach Absprache.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Hilfe beim Umzug</strong>
+              <span>Wir helfen beim Tragen von Kartons und Möbeln.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Kleine Gartenarbeiten</strong>
+              <span>Zum Beispiel Rasen mähen und den Garten aufräumen.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Für Läden -->
+      <div class="service-card">
+        <h3>Für Läden</h3>
+        <ul>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Fotos für Ihren Laden</strong>
+              <span>Wir machen Bilder für Barbershops, Cafés und andere Geschäfte.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Instagram und TikTok</strong>
+              <span>Wir bereiten Bilder und Beiträge vor und helfen beim Posten.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Hilfe mit der Website</strong>
+              <span>Wir können Bilder oder Texte aktualisieren und die Seite übersichtlicher machen.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="ablauf">
+    <div class="how-box">
+      <h3>So geht es</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <p>Sie sagen uns,<br>was Sie brauchen.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <p>Wir besprechen Aufgabe,<br>Termin und Preis.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <p>Wenn alles passt,<br>legen wir los.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="kontakt">
+    <div class="contact-box">
+      <h3>Fragen Sie uns — wir besprechen alles persönlich.</h3>
+      <p class="phone"><a href="tel:+436767456437">0676 745 6437</a></p>
+      <p class="contact-note">Der Preis richtet sich nach der Aufgabe und wird vorher besprochen.</p>
+      <p class="contact-links">
+        Instagram <a href="https://instagram.com/Lumenvale.light" target="_blank" rel="noopener">@Lumenvale.light</a><br>
+        <a href="mailto:lumenvale.co@gmail.com">lumenvale.co@gmail.com</a>
+      </p>
+      <p class="address">Innsbruck 6020, Tirol</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    LUMENVALE · Where Light Begins
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
